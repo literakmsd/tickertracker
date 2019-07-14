@@ -18,6 +18,6 @@ getData<-function (tickers,from="2014-01-01",to=Sys.Date()){
   }
   # dataDf<-cbind(as.Date(row.names(dataDf)),dataDf)
   dataPlot<-plot(adjustedData)
-  return(list(adjustedData,dataPlot))
+  return(dataPlot)
 }
 
