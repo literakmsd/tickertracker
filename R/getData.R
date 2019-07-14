@@ -17,6 +17,7 @@ getData<-function (tickers,from="2014-01-01",to=Sys.Date()){
     adjustedData<-cbind(adjustedData,d[,6])
   }
   # dataDf<-cbind(as.Date(row.names(dataDf)),dataDf)
-  plot(adjustedData)
-  return(adjustedData)
+  dataPlot<-plot(adjustedData)
+  return(list(adjustedData,dataPlot))
 }
+
