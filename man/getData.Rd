@@ -2,24 +2,20 @@
 % Please edit documentation in R/getData.R
 \name{getData}
 \alias{getData}
-\title{Illustration of crayon colors}
+\title{Get tickers data}
 \usage{
 getData()
 }
 \arguments{
-\item{method2order}{method to order colors (\code{"hsv"} or \code{"cluster"})}
-
-\item{cex}{character expansion for the text}
-
-\item{mar}{margin parameters; vector of length 4 (see \code{\link[graphics]{par}})}
+\item{tickers}{}
 }
 \value{
-None
+Tickers Data
 }
 \description{
-Creates a plot of the crayon colors in \code{\link{brocolors}}
+Get tickers data based on suggested list of tickers
 }
 \examples{
-plot_crayons()
+getData()
 
 }

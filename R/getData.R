@@ -1,17 +1,22 @@
-#' Illustration of crayon colors
+#' Get tickers data
 #'
-#' Creates a plot of the crayon colors in \code{\link{brocolors}}
+#' Get tickers data based on suggested list of tickers
 #'
-#' @param method2order method to order colors (\code{"hsv"} or \code{"cluster"})
-#' @param cex character expansion for the text
-#' @param mar margin parameters; vector of length 4 (see \code{\link[graphics]{par}})
+#' @param tickers
 #'
-#' @return None
+#' @return Tickers Data
 #'
 #' @examples
-#' plot_crayons()
+#' getData()
 #'
 #' @export
-getData<-function (){
-
+getData<-function (tickers,from="2014-01-01",to=Sys.Date()){
+  data<-lapply(tickers,getSymbols,from=from,to=to,auto.assign=FALSE)
+  adjustedData<-NULL
+  for(d in data){
+    adjustedData<-cbind(adjustedData,d[,6])
+  }
+  # dataDf<-cbind(as.Date(row.names(dataDf)),dataDf)
+  plot(adjustedData)
+  return(adjustedData)
 }
